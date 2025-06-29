@@ -18,7 +18,20 @@ export const badgeVariants = cva("inline-flex items-center justify-center rounde
   }
 });
 
-interface BadgeProps extends React.ComponentProps<"div"> {}
+export const badgeTextVariants = cva("", {
+  variants: {
+    variant: {
+      primary: "text-green-dark",
+      secondary: "text-pink-dark"
+    }
+  },
+  defaultVariants: {
+    variant: "primary"
+  }
+});
+
+interface BadgeProps extends React.ComponentProps<"div">, 
+  VariantProps<typeof badgeVariants> {}
 
 export default function Badge({
   variant,
