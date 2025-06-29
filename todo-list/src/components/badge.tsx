@@ -38,11 +38,14 @@ export default function Badge({
   size,
   className,
   children,
+  ...props
 }: BadgeProps) {
 
   return(
-    <div>
-      <Text variant="body-sm-bold">{children}</Text>
+    <div className={badgeVariants({variant, size, className})} {...props}>
+      <Text variant="body-sm-bold" className={badgeTextVariants({variant})}>
+        {children}
+      </Text>
     </div>
   );
 
