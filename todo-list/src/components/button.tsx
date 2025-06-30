@@ -1,4 +1,9 @@
+import React from "react"
+import Icon from "./icon"
 
+interface ButtonProps extends React.ComponentProps<"button"> {
+  icon?: React.ComponentProps<typeof Icon>["svg"]
+}
 
 export default function Button({
   variant,
