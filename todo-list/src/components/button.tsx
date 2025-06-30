@@ -1,7 +1,32 @@
-import React from "react"
-import Icon from "./icon"
+import React from "react";
+import Icon from "./icon";
+import {cva, type VariantProps} from "class-variance-authority";
 
-interface ButtonProps extends React.ComponentProps<"button"> {
+export const buttonVariants = cva(`
+  flex items-center justify-center cursor-pointer
+  transition rounded-lg group gap-2
+`, {
+  variants: {
+    variant: {
+      primary: "bg-gray-200 hover:bg-pink-light"
+    },
+    size: {
+      md: "h-14 py-4 px-5"
+    }, 
+    disabled: {
+      true: "opacity-50 pointer-events-none"
+    },
+    defaultVariants: {
+      variant: "primary",
+      size: "md",
+      disabled: false
+    }
+  }
+});
+
+interface ButtonProps 
+  extends React.ComponentProps<"button">, 
+    VariantProps<typeof buttonVariants> {
   icon?: React.ComponentProps<typeof Icon>["svg"]
 }
 
