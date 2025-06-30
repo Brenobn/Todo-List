@@ -25,7 +25,7 @@ export const buttonVariants = cva(`
 });
 
 interface ButtonProps 
-  extends React.ComponentProps<"button">, 
+  extends Omit<React.ComponentProps<"button">, "size" | "disabled">, 
     VariantProps<typeof buttonVariants> {
   icon?: React.ComponentProps<typeof Icon>["svg"]
 }
@@ -39,5 +39,5 @@ export default function Button({
   icon: IconComponent,
   ...props
 }: ButtonProps) {
-  return <button {...props}>{children}</button>
+  return <button {...props}>{children}</button>;
 }
