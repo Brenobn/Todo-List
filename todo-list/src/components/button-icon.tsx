@@ -1,6 +1,6 @@
 import type React from "react";
 import Icon from "./icon";
-import { cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 
 export const buttonIconVariants = cva(`
   inline-flex items-center justify-center cursor-pointer transition group
@@ -17,10 +17,34 @@ export const buttonIconVariants = cva(`
     disabled: {
       true: "opacity-50 pointer-events-none"
     }
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "sm",
+    disabled: false,
+  }
+});
+
+export const buttonIconIconVriants = cva("transition", {
+  variants: {
+    variant: {
+      primary: "fill-white",
+      secondary: "fill-pink-base group-hover:fill-white",
+      tertiary: "fill-gray-300 group-hover:fill-gray-400"
+    },
+    size: {
+      sm: "w-4 h4"
+    }
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "sm"
   }
 })
 
-interface ButtonIconProps extends Omit<React.ComponentProps<"button">, "size" | "disabled"> {
+interface ButtonIconProps 
+  extends VariantProps<typeof buttonIconVariants>,
+   Omit<React.ComponentProps<"button">, "size" | "disabled"> {
   icon: React.ComponentProps<typeof Icon>["svg"]
 }
 
