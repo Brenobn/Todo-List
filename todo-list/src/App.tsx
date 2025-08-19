@@ -7,6 +7,7 @@ import PlusIcon from "./assets/icons/Plus.svg?react";
 import SpinnerIcon from "./assets/icons/spinner.svg?react";
 import XIcon from "./assets/icons/X.svg?react";
 import Badge from "./components/badge";
+import Button from "./components/button";
 
 export default function App() {
   return (
@@ -29,6 +30,10 @@ export default function App() {
       <div>
         <Badge variant="secondary">5</Badge>
         <Badge variant="primary">2 de 5</Badge>
+      </div>
+
+      <div>
+        <Button icon={PlusIcon}>Nova tarefa</Button>
       </div>
     </div>
   )
