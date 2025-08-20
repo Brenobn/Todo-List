@@ -1,4 +1,5 @@
-import { cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
+import type React from "react";
 
 export const inputTextVariants = cva(`
   border-b border-solid border-gray-200 focus:border-pink-base 
@@ -17,3 +18,6 @@ export const inputTextVariants = cva(`
     disabled: false,
   }
 });
+
+interface InputTextProps extends VariantProps<typeof inputTextVariants>,
+  Omit<React.ComponentProps<"input">, "size"> {}
