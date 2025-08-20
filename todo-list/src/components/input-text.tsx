@@ -21,7 +21,7 @@ export const inputTextVariants = cva(`
 });
 
 interface InputTextProps extends VariantProps<typeof inputTextVariants>,
-  Omit<React.ComponentProps<"input">, "size"> {}
+  Omit<React.ComponentProps<"input">, "size" | "disabled"> {}
 
   export default function InputText({
     size,
