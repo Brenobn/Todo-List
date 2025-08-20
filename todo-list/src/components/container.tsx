@@ -1,4 +1,5 @@
-import { cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
+import type React from "react";
 
 export const containerVariants = cva("mx-auto", {
   variants: {
@@ -10,4 +11,9 @@ export const containerVariants = cva("mx-auto", {
     size: "md"
   }
 });
+
+interface ContainerProps extends VariantProps<typeof containerVariants>,
+  React.ComponentProps<"div"> {
+    as?: keyof React.JSX.IntrinsicElements;
+  }
 
