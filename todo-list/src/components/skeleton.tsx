@@ -1,4 +1,5 @@
-import { cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
+import type React from "react";
 
 export const skeletonVariants =  cva(
   `
@@ -16,4 +17,7 @@ export const skeletonVariants =  cva(
     }
   }
 );
+
+interface SkeletonProps extends VariantProps<typeof skeletonVariants>,
+  React.ComponentProps<"div"> {}
 
