@@ -9,39 +9,58 @@ import XIcon from "./assets/icons/X.svg?react";
 import Badge from "./components/badge";
 import Button from "./components/button";
 import ButtonIcon from "./components/button-icon";
+import InputText from "./components/input-text";
+import InputCheckbox from "./components/input-checkbox";
+import Card from "./components/card";
+import Container from "./components/container";
 
 export default function App() {
   return (
-    <div className="grid gap-3">
-      <div className="flex flex-col gap-1">
-        <Text variant="body-sm-bold" className="text-green-dark">       
-          Hello world!
-        </Text>
-      </div>
+    <Container>
 
-      <div className="flex gap-1">
-        <Icon svg={TrashIcon} className="fill-green-base" />
-        <Icon svg={CheckIcon} />
-        <Icon svg={PlusIcon} />
-        <Icon svg={SpinnerIcon} animate />
-        <Icon svg={PencilIcon} />
-        <Icon svg={XIcon} />
-      </div>
+      <div className="grid gap-10">
+        <div className="flex flex-col gap-1">
+          <Text variant="body-sm-bold" className="text-green-dark">       
+            Hello world!
+          </Text>
+        </div>
 
-      <div>
-        <Badge variant="secondary">5</Badge>
-        <Badge variant="primary">2 de 5</Badge>
-      </div>
+        <div className="flex gap-1">
+          <Icon svg={TrashIcon} className="fill-green-base" />
+          <Icon svg={CheckIcon} />
+          <Icon svg={PlusIcon} />
+          <Icon svg={SpinnerIcon} animate />
+          <Icon svg={PencilIcon} />
+          <Icon svg={XIcon} />
+        </div>
 
-      <div>
-        <Button icon={PlusIcon}>Nova tarefa</Button>
-      </div>
+        <div>
+          <Badge variant="secondary">5</Badge>
+          <Badge variant="primary">2 de 5</Badge>
+        </div>
 
-      <div className="flex gap-1">
-        <ButtonIcon icon={TrashIcon} />
-        <ButtonIcon icon={TrashIcon} variant="secondary" />
-        <ButtonIcon icon={TrashIcon} variant="tertiary" />
+        <div>
+          <Button icon={PlusIcon}>Nova tarefa</Button>
+        </div>
+
+        <div className="flex gap-1">
+          <ButtonIcon icon={TrashIcon} />
+          <ButtonIcon icon={TrashIcon} variant="secondary" />
+          <ButtonIcon icon={TrashIcon} variant="tertiary" />
+        </div>
+
+        <div>
+          <InputText />
+        </div>
+
+        <div>
+          <InputCheckbox />
+        </div>
+
+        <div>
+          <Card size="md" >Hello World!</Card>
+        </div>
       </div>
-    </div>
+    </Container>
   )
 }
