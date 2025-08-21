@@ -17,7 +17,7 @@ import XIcon from "../assets/icons/X.svg?react";
 
 
 
-export default function PageComponents {
+export default function PageComponents() {
   return (
     <Container>
 
